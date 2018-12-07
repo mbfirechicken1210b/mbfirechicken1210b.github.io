@@ -3,9 +3,15 @@ let sunSize = 240;
 let lineStep = 24
 
 let oceanLines = []; // array of sline objects
+let bg;
+function preload(){
+	bg = loadImage('img/bg.jpg');
+}
+
 
 function setup() {
-  createCanvas(710, 400);
+  	cnv = createCanvas(windowWidth,windowHeight).parent('processing');
+	centerCanvas();
   // Create objects
   for (var i=0; i<sunSize/lineStep; i++) {
     sunLines.push(new sline(i*lineStep));
@@ -15,7 +21,8 @@ function setup() {
 }
 
 function draw() {
-  background(255);
+  background(100);
+  /*
   for (var i=0; i<sunLines.length; i++) {
     sunLines[i].move();
     sunLines[i].display();
@@ -25,8 +32,9 @@ function draw() {
     }
   }
 
-  oceanLines[0].move();
+  oceanLines[0].move();*/
   //oceanLines[0].display();
+  image(bg,0,0);
 }
 
 // sline class
@@ -67,3 +75,15 @@ function oline() {
   };
 }
 
+// window size things--------------------
+function centerCanvas() {
+  var x = (windowWidth - width) / 2;
+  var y = (windowHeight - height) / 2;
+  cnv.position(x, y-20);
+}
+function windowResized() {
+  //centerCanvas();
+  var x = (windowWidth - width) / 2;
+  var y = (windowHeight - height) / 2;
+}
+// window size things--------------------
