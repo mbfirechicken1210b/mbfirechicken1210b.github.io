@@ -34,7 +34,7 @@ function draw() {
 
   oceanLines[0].move();*/
   //oceanLines[0].display();
-  image(bg,0,0);
+  image(bg,0,0,windowWidth,windowWidth*9/16);
 }
 
 // sline class
