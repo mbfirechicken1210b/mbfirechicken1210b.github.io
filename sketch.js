@@ -21,7 +21,7 @@ function setup() {
 }
 
 function draw() {
-  background(100);
+  background(255);
   /*
   for (var i=0; i<sunLines.length; i++) {
     sunLines[i].move();
