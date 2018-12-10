@@ -96,6 +96,6 @@ function centerCanvas() {
   cnv.position(x, 0);
 }
 function windowResized() {
-  centerCanvas();
+  //centerCanvas();
 }
 // window size things--------------------
