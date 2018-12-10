@@ -14,10 +14,10 @@ function preload(){
 function setup() {
   if(displayWidth<768){
     pichei = windowWidth*16/9;
-    cnv = createCanvas(windowWidth,pichei).parent('processing');
+    cnv = createCanvas(windowWidth*.9,pichei*.9).parent('processing');
   }else{
     pichei = windowWidth*9/16;
-    cnv = createCanvas(windowWidth,pichei).parent('processing');
+    cnv = createCanvas(windowWidth*.9,pichei*.9).parent('processing');
   }
   //cnv = createCanvas(windowWidth,windowHeight).parent('processing');
   picwid = windowWidth;
@@ -31,7 +31,7 @@ function setup() {
 }
 
 function draw() {
-  background(255);
+  background(0);
   /*
   for (var i=0; i<sunLines.length; i++) {
     sunLines[i].move();
@@ -45,9 +45,9 @@ function draw() {
   oceanLines[0].move();
   oceanLines[0].display();*/
   if(displayWidth<768){
-    image(bg2,0,0,picwid,pichei);
+    image(bg2,0,0,picwid*.9,pichei*.9);
   }else{
-    image(bg,0,0,picwid,pichei);
+    image(bg,0,0,picwid*.9,pichei*.9);
   }
 }
 
@@ -92,12 +92,10 @@ function oline() {
 // window size things--------------------
 function centerCanvas() {
   var x = (windowWidth - width) / 2;
-  var y = (windowHeight - height) / 2;
-  cnv.position(x, y);
+  //var y = (windowHeight - height) / 2;
+  cnv.position(x, 0);
 }
 function windowResized() {
-  //centerCanvas();
-  var x = (windowWidth - width) / 2;
-  var y = (windowHeight - height) / 2;
+  centerCanvas();
 }
 // window size things--------------------
